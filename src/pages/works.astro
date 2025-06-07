@@ -36,7 +36,7 @@ const works = [
       "AI・画像処理"
     ],
     challenges: "カメラキャリブレーションやノイズ除去、精度向上のためのアルゴリズム調整。",
-    status: "完成"
+    status: "終了"
   },
   {
     id: 3,
@@ -70,18 +70,18 @@ const works = [
       "財務指標の自動計算・表示"
     ],
     challenges: "OCR精度の向上、PDFレイアウトの多様性対応、チームでの役割分担。",
-    status: "完成"
+    status: "終了"
   }
 ];
 
 const statusColors: Record<string, string> = {
-  "完成": "bg-green-100 text-green-800",
+  "終了": "bg-green-100 text-green-800",
   "開発中": "bg-yellow-100 text-yellow-800",
   "計画中": "bg-blue-100 text-blue-800"
 };
 ---
 
-<Layout title="開発実績一覧 - 山田太郎" description="山田太郎が開発した主要開発実績の詳細をご紹介します。React、Vue.js、Next.jsを使用したWebアプリケーション開発実績。">
+<Layout title="開発実績一覧 - 山田太郎" description="山田太郎が開発した主要開発実績の詳細をご紹介します。React、Next.jsを使用したWebアプリケーション開発実績。">
   <Header />
   <main class="pt-16">
     <section class="py-20 px-4 sm:px-6 lg:px-8">
@@ -93,25 +93,6 @@ const statusColors: Record<string, string> = {
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
             これまでに開発・参加した開発実績をご紹介します。技術スタック、機能、工夫した点など詳細をご確認いただけます。
           </p>
-        </div>
-
-        <!-- Filter Options -->
-        <div class="mb-12 flex flex-wrap justify-center gap-4">
-          <button class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
-            すべて
-          </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
-            React
-          </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
-            Vue.js
-          </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
-            Node.js
-          </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
-            TypeScript
-          </button>
         </div>
 
         <!-- Achievements Grid -->
