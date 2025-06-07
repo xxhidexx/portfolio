@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const projects = [
+const achievements = [
   {
     id: 1,
     title: "旅館予約サイト",
@@ -81,17 +81,17 @@ const statusColors: Record<string, string> = {
 };
 ---
 
-<Layout title="プロジェクト一覧 - 山田太郎" description="山田太郎が開発した主要プロジェクトの詳細をご紹介します。React、Vue.js、Next.jsを使用したWebアプリケーション開発実績。">
+<Layout title="開発実績一覧 - 山田太郎" description="山田太郎が開発した主要開発実績の詳細をご紹介します。React、Vue.js、Next.jsを使用したWebアプリケーション開発実績。">
   <Header />
   <main class="pt-16">
     <section class="py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
           <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            プロジェクト一覧
+            開発実績一覧
           </h1>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            これまでに開発・参加したプロジェクトをご紹介します。技術スタック、機能、工夫した点など詳細をご確認いただけます。
+            これまでに開発・参加した開発実績をご紹介します。技術スタック、機能、工夫した点など詳細をご確認いただけます。
           </p>
         </div>
 
@@ -114,29 +114,29 @@ const statusColors: Record<string, string> = {
           </button>
         </div>
 
-        <!-- Projects Grid -->
+        <!-- Achievements Grid -->
         <div class="grid gap-8">
-          {projects.map((project, index) => (
+          {achievements.map((achievement, index) => (
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div class={`${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} lg:flex`}>
                 <div class="p-8 lg:w-3/5">
                   <div class="flex items-start justify-between mb-4">
                     <h2 class="text-2xl font-bold text-gray-900">
-                      {project.title}
+                      {achievement.title}
                     </h2>
-                    <span class={`px-3 py-1 rounded-full text-sm font-medium ${statusColors[project.status]}`}>
-                      {project.status}
+                    <span class={`px-3 py-1 rounded-full text-sm font-medium ${statusColors[achievement.status]}`}>
+                      {achievement.status}
                     </span>
                   </div>
                   
                   <p class="text-gray-600 mb-4 leading-relaxed">
-                    {project.longDescription}
+                    {achievement.longDescription}
                   </p>
                   
                   <div class="mb-6">
                     <h3 class="text-lg font-semibold text-gray-900 mb-3">主な機能</h3>
                     <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {project.features.map((feature) => (
+                      {achievement.features.map((feature) => (
                         <li class="flex items-center text-sm text-gray-600">
                           <svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
@@ -150,7 +150,7 @@ const statusColors: Record<string, string> = {
                   <div class="mb-6">
                     <h3 class="text-lg font-semibold text-gray-900 mb-3">技術スタック</h3>
                     <div class="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
+                      {achievement.technologies.map((tech) => (
                         <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                           {tech}
                         </span>
@@ -161,13 +161,13 @@ const statusColors: Record<string, string> = {
                   <div class="mb-6">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">技術的な挑戦</h3>
                     <p class="text-gray-600 text-sm">
-                      {project.challenges}
+                      {achievement.challenges}
                     </p>
                   </div>
                   
                   <div class="flex gap-4">
                     <a 
-                      href={project.github}
+                      href={achievement.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
@@ -178,7 +178,7 @@ const statusColors: Record<string, string> = {
                       GitHub
                     </a>
                     <a 
-                      href={project.demo}
+                      href={achievement.demo}
                       target="_blank"
                       rel="noopener noreferrer"
                       class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
@@ -198,10 +198,10 @@ const statusColors: Record<string, string> = {
         <!-- CTA Section -->
         <div class="mt-16 text-center bg-gray-50 rounded-lg p-8">
           <h2 class="text-2xl font-bold text-gray-900 mb-4">
-            新しいプロジェクトをお探しですか？
+            新しい開発実績をお探しですか？
           </h2>
           <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-            これらの経験を活かして、新しいプロジェクトに参加することができます。
+            これらの経験を活かして、新しい開発実績に参加することができます。
             お気軽にお問い合わせください。
           </p>
           <a 
