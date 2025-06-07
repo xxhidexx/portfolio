@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="プロフィール - 山田太郎" description="山田太郎の詳細なプロフィール、経歴、学習歴をご紹介します。">
+  <Header />
+  <main class="pt-16">
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <img 
+            src="/profile-placeholder.jpg" 
+            alt="山田太郎のプロフィール写真" 
+            class="w-40 h-40 rounded-full mx-auto mb-8 shadow-lg object-cover"
+          />
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            山田太郎について
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            ユーザー体験を重視したWebアプリケーション開発に情熱を注ぐフルスタックエンジニア
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">自己紹介</h2>
+            <div class="prose prose-lg text-gray-600">
+              <p class="mb-4">
+                こんにちは、山田太郎です。大学でコンピュータサイエンスを学び、現在はフルスタックエンジニアとして活動しています。
+              </p>
+              <p class="mb-4">
+                特にフロントエンド技術に強い関心を持ち、React、TypeScript、Next.jsを使用したモダンなWebアプリケーション開発を得意としています。
+                バックエンドではNode.js、Python、PostgreSQLを使用したAPIの設計・開発も行っています。
+              </p>
+              <p>
+                「技術を通じてユーザーの課題を解決し、より良い体験を提供したい」という想いで日々開発に取り組んでいます。
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">価値観・理念</h2>
+            <div class="space-y-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h3 class="font-semibold text-blue-800 mb-2">ユーザーファースト</h3>
+                <p class="text-blue-700 text-sm">
+                  常にユーザーの立場に立ち、使いやすく価値のあるプロダクトの開発を心がけています。
+                </p>
+              </div>
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h3 class="font-semibold text-green-800 mb-2">継続的な学習</h3>
+                <p class="text-green-700 text-sm">
+                  技術の進歩に合わせて常に新しい知識を学び、スキルアップに努めています。
+                </p>
+              </div>
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <h3 class="font-semibold text-purple-800 mb-2">チームワーク</h3>
+                <p class="text-purple-700 text-sm">
+                  チームメンバーとのコミュニケーションを大切にし、協力して目標達成に取り組みます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-16">
+          <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">経歴・学歴</h2>
+          <div class="space-y-8">
+            <div class="flex flex-col md:flex-row gap-4">
+              <div class="md:w-1/4">
+                <span class="text-sm font-medium text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+                  2024年 - 現在
+                </span>
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">フリーランスエンジニア</h3>
+                <p class="text-gray-600 mb-2">
+                  Web制作会社との業務委託として、Reactを使用したWebアプリケーションの開発を担当。
+                  企画から設計、実装、テストまで一貫して対応。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">React</span>
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">TypeScript</span>
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Next.js</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4">
+              <div class="md:w-1/4">
+                <span class="text-sm font-medium text-green-600 bg-green-100 px-3 py-1 rounded-full">
+                  2021年 - 2024年
+                </span>
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">○○大学 情報工学部</h3>
+                <p class="text-gray-600 mb-2">
+                  コンピュータサイエンスの基礎からWeb開発、データベース設計まで幅広く学習。
+                  卒業制作では機械学習を活用したWebアプリケーションを開発。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Java</span>
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Python</span>
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">機械学習</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4">
+              <div class="md:w-1/4">
+                <span class="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+                  2022年 - 2023年
+                </span>
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">インターン - ○○株式会社</h3>
+                <p class="text-gray-600 mb-2">
+                  スタートアップ企業でのWebアプリケーション開発インターン。
+                  Vue.jsを使用したSPAの開発、RESTful APIの設計・実装を担当。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Vue.js</span>
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Node.js</span>
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">MongoDB</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-gray-900 mb-8">資格・認定</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-semibold text-gray-900 mb-2">基本情報技術者試験</h3>
+              <p class="text-gray-600 text-sm">2023年取得</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-semibold text-gray-900 mb-2">TOEIC 850点</h3>
+              <p class="text-gray-600 text-sm">2023年取得</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout> 

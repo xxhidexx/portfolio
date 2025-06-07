@@ -1,0 +1,99 @@
+---
+const skillCategories = [
+  {
+    title: "フロントエンド",
+    skills: [
+      { name: "React", level: 90 },
+      { name: "TypeScript", level: 85 },
+      { name: "Next.js", level: 80 },
+      { name: "Vue.js", level: 75 },
+      { name: "HTML/CSS", level: 95 },
+      { name: "Tailwind CSS", level: 85 }
+    ]
+  },
+  {
+    title: "バックエンド",
+    skills: [
+      { name: "Node.js", level: 85 },
+      { name: "Python", level: 80 },
+      { name: "PostgreSQL", level: 75 },
+      { name: "MongoDB", level: 70 },
+      { name: "Express.js", level: 80 },
+      { name: "FastAPI", level: 75 }
+    ]
+  },
+  {
+    title: "ツール・その他",
+    skills: [
+      { name: "Git", level: 90 },
+      { name: "Docker", level: 75 },
+      { name: "AWS", level: 70 },
+      { name: "Figma", level: 80 },
+      { name: "Jest", level: 75 },
+      { name: "Vercel", level: 85 }
+    ]
+  }
+];
+---
+
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        スキル・技術スタック
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        これまでの学習と実務経験で身につけた技術スキルです
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      {skillCategories.map((category) => (
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">
+            {category.title}
+          </h3>
+          <div class="space-y-4">
+            {category.skills.map((skill) => (
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700">
+                    {skill.name}
+                  </span>
+                  <span class="text-sm text-gray-500">
+                    {skill.level}%
+                  </span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div 
+                    class="bg-blue-600 h-2 rounded-full transition-all duration-300 ease-out"
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 opacity-60">
+      <div class="text-center">
+        <div class="text-2xl font-bold text-blue-600 mb-2">3+</div>
+        <div class="text-sm text-gray-600">開発経験年数</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-blue-600 mb-2">10+</div>
+        <div class="text-sm text-gray-600">完成プロジェクト</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-blue-600 mb-2">5+</div>
+        <div class="text-sm text-gray-600">使用言語</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-blue-600 mb-2">50+</div>
+        <div class="text-sm text-gray-600">GitHubコミット</div>
+      </div>
+    </div>
+  </div>
+</section> 

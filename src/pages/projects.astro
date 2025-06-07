@@ -1,0 +1,280 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const projects = [
+  {
+    id: 1,
+    title: "ECサイト構築プロジェクト",
+    description: "Next.js と Stripe を使用したフルスタックECサイト。商品管理、ユーザー認証、決済機能を実装。レスポンシブデザインで、モバイルからデスクトップまで最適化。",
+    longDescription: "モダンなECサイトプラットフォームを構築しました。管理者は商品の追加・編集・削除、注文管理、ユーザー管理が可能です。顧客は商品の検索・フィルタリング、カート機能、安全な決済処理を利用できます。",
+    image: "/project1-placeholder.jpg",
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Tailwind CSS", "Prisma"],
+    github: "https://github.com/example/ecommerce",
+    demo: "https://example-ecommerce.vercel.app",
+    features: [
+      "商品カタログ・検索機能",
+      "ショッピングカート",
+      "Stripe決済統合",
+      "ユーザー認証・管理",
+      "管理者ダッシュボード",
+      "レスポンシブデザイン"
+    ],
+    challenges: "大規模なデータベース設計と、セキュアな決済処理の実装が主な課題でした。",
+    status: "完成"
+  },
+  {
+    id: 2,
+    title: "タスク管理アプリ",
+    description: "React と Firebase を使用したリアルタイムタスク管理アプリ。チーム協働機能付き。",
+    longDescription: "チーム向けのリアルタイムタスク管理アプリケーションです。プロジェクトの作成、タスクの割り当て、進捗の可視化、チームメンバーとのコラボレーション機能を提供します。",
+    image: "/project2-placeholder.jpg",
+    technologies: ["React", "Firebase", "Material-UI", "TypeScript", "Cloud Functions"],
+    github: "https://github.com/example/task-manager",
+    demo: "https://example-tasks.vercel.app",
+    features: [
+      "リアルタイム同期",
+      "プロジェクト管理",
+      "タスクの優先度設定",
+      "チームメンバー招待",
+      "進捗ダッシュボード",
+      "通知機能"
+    ],
+    challenges: "リアルタイムデータ同期とパフォーマンス最適化が主な技術的課題でした。",
+    status: "完成"
+  },
+  {
+    id: 3,
+    title: "天気予報API統合アプリ",
+    description: "Vue.js で作成した天気予報アプリ。位置情報取得と週間予報表示機能。",
+    longDescription: "OpenWeather APIを活用した天気予報アプリケーションです。ユーザーの現在地を自動取得し、現在の天気と5日間の詳細な予報を表示します。",
+    image: "/project3-placeholder.jpg",
+    technologies: ["Vue.js", "OpenWeather API", "Chart.js", "CSS3", "PWA"],
+    github: "https://github.com/example/weather-app",
+    demo: "https://example-weather.netlify.app",
+    features: [
+      "現在地自動取得",
+      "5日間の詳細予報",
+      "天気チャート表示",
+      "都市検索機能",
+      "PWA対応",
+      "ダークモード"
+    ],
+    challenges: "位置情報のプライバシー配慮と、様々な気象データの可視化が課題でした。",
+    status: "完成"
+  },
+  {
+    id: 4,
+    title: "ブログプラットフォーム",
+    description: "Nuxt.js で構築したヘッドレスCMS連携ブログサイト。",
+    longDescription: "ContentfulというヘッドレスCMSと連携したモダンブログプラットフォームです。管理者はWebインターフェースからコンテンツを管理でき、サイトは静的生成で高速表示を実現。",
+    image: "/project4-placeholder.jpg",
+    technologies: ["Nuxt.js", "Contentful", "SCSS", "Netlify", "TypeScript"],
+    github: "https://github.com/example/blog-platform",
+    demo: "https://example-blog.netlify.app",
+    features: [
+      "ヘッドレスCMS連携",
+      "静的サイト生成",
+      "SEO最適化",
+      "記事検索・タグ機能",
+      "コメント機能",
+      "RSS配信"
+    ],
+    challenges: "CMSとの効率的なデータ連携と、SEO最適化の実装が主な課題でした。",
+    status: "完成"
+  },
+  {
+    id: 5,
+    title: "チャットアプリケーション",
+    description: "Socket.ioを使用したリアルタイムチャットアプリ。",
+    longDescription: "WebSocketを活用したリアルタイムチャットアプリケーション。プライベートメッセージ、グループチャット、ファイル共有機能を実装しています。",
+    image: "/project5-placeholder.jpg",
+    technologies: ["Node.js", "Socket.io", "Express", "MongoDB", "React"],
+    github: "https://github.com/example/chat-app",
+    demo: "https://example-chat.herokuapp.com",
+    features: [
+      "リアルタイムメッセージング",
+      "プライベート・グループチャット",
+      "ファイル共有",
+      "オンライン状態表示",
+      "メッセージ履歴",
+      "絵文字サポート"
+    ],
+    challenges: "大量の同時接続の処理と、メッセージの効率的な保存・取得が技術的課題でした。",
+    status: "開発中"
+  },
+  {
+    id: 6,
+    title: "ポートフォリオサイト",
+    description: "Astro で構築したこのポートフォリオサイト。",
+    longDescription: "就職活動用に制作したポートフォリオサイトです。Astroの静的サイト生成機能を活用し、高速で SEO に優れたサイトを構築しました。",
+    image: "/project6-placeholder.jpg",
+    technologies: ["Astro", "Tailwind CSS", "TypeScript", "Vercel"],
+    github: "https://github.com/example/portfolio",
+    demo: "https://yamada-taro-portfolio.vercel.app",
+    features: [
+      "静的サイト生成",
+      "レスポンシブデザイン",
+      "SEO最適化",
+      "高速読み込み",
+      "アクセシビリティ対応",
+      "Vercelデプロイ"
+    ],
+    challenges: "パフォーマンス最適化と、採用担当者に魅力的に映るデザインの実現が課題でした。",
+    status: "完成"
+  }
+];
+
+const statusColors: Record<string, string> = {
+  "完成": "bg-green-100 text-green-800",
+  "開発中": "bg-yellow-100 text-yellow-800",
+  "計画中": "bg-blue-100 text-blue-800"
+};
+---
+
+<Layout title="プロジェクト一覧 - 山田太郎" description="山田太郎が開発した主要プロジェクトの詳細をご紹介します。React、Vue.js、Next.jsを使用したWebアプリケーション開発実績。">
+  <Header />
+  <main class="pt-16">
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            プロジェクト一覧
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            これまでに開発・参加したプロジェクトをご紹介します。技術スタック、機能、工夫した点など詳細をご確認いただけます。
+          </p>
+        </div>
+
+        <!-- Filter Options -->
+        <div class="mb-12 flex flex-wrap justify-center gap-4">
+          <button class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+            すべて
+          </button>
+          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
+            React
+          </button>
+          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
+            Vue.js
+          </button>
+          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
+            Node.js
+          </button>
+          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
+            TypeScript
+          </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid gap-8">
+          {projects.map((project, index) => (
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div class={`${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} lg:flex`}>
+                <div class="lg:w-2/5">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    class="w-full h-64 lg:h-full object-cover"
+                  />
+                </div>
+                <div class="p-8 lg:w-3/5">
+                  <div class="flex items-start justify-between mb-4">
+                    <h2 class="text-2xl font-bold text-gray-900">
+                      {project.title}
+                    </h2>
+                    <span class={`px-3 py-1 rounded-full text-sm font-medium ${statusColors[project.status]}`}>
+                      {project.status}
+                    </span>
+                  </div>
+                  
+                  <p class="text-gray-600 mb-4 leading-relaxed">
+                    {project.longDescription}
+                  </p>
+                  
+                  <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">主な機能</h3>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {project.features.map((feature) => (
+                        <li class="flex items-center text-sm text-gray-600">
+                          <svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">技術スタック</h3>
+                    <div class="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">技術的な挑戦</h3>
+                    <p class="text-gray-600 text-sm">
+                      {project.challenges}
+                    </p>
+                  </div>
+                  
+                  <div class="flex gap-4">
+                    <a 
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+                    >
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                      GitHub
+                    </a>
+                    <a 
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                      </svg>
+                      ライブデモ
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- CTA Section -->
+        <div class="mt-16 text-center bg-gray-50 rounded-lg p-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            新しいプロジェクトをお探しですか？
+          </h2>
+          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+            これらの経験を活かして、新しいプロジェクトに参加することができます。
+            お気軽にお問い合わせください。
+          </p>
+          <a 
+            href="/contact" 
+            class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            お問い合わせ
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout> 
