@@ -6,22 +6,21 @@
 
 - **高速**: Astroの静的サイト生成により、高速なページ読み込みを実現
 - **レスポンシブ**: モバイルからデスクトップまで最適化されたデザイン
-- **SEO最適化**: メタタグ、構造化データによる検索エンジン最適化
-- **アクセシビリティ**: WCAG 2.1 AA準拠のアクセシブルなデザイン
+- **SEO最適化**: メタタグによる検索エンジン最適化
 - **モダンなUI**: Tailwind CSSによる美しく一貫性のあるデザイン
+- **条件付き表示**: GitHubリンクやデモサイトがある場合のみボタンを表示
 
 ## 📋 ページ構成
 
-- **ホーム** (`/`): ヒーローセクション、スキル、プロジェクト紹介
-- **プロフィール** (`/about`): 詳細な自己紹介、経歴、価値観
-- **プロジェクト** (`/projects`): 開発プロジェクトの詳細一覧
+- **ホーム** (`/`): ヒーローセクション、開発実績、スキル紹介
+- **開発実績** (`/works`): 開発プロジェクトの詳細一覧
+- **プロフィール** (`/about`): 詳細な自己紹介、経歴（※現在非表示）
 - **お問い合わせ** (`/contact`): コンタクトフォームと連絡先情報
 
 ## 🛠️ 技術スタック
 
-- **フレームワーク**: [Astro](https://astro.build/)
-- **スタイリング**: [Tailwind CSS](https://tailwindcss.com/)
-- **フォント**: [Inter](https://fonts.google.com/specimen/Inter)
+- **フレームワーク**: [Astro](https://astro.build/) v5.9.0
+- **スタイリング**: [Tailwind CSS](https://tailwindcss.com/) v4.1.8
 - **デプロイ**: [Vercel](https://vercel.com/)
 - **言語**: TypeScript, HTML, CSS
 
@@ -30,7 +29,7 @@
 ### 前提条件
 
 - Node.js 18以上
-- npm または yarn
+- npm
 
 ### ローカル開発
 
@@ -56,36 +55,42 @@ npm run preview
 
 ### Vercelへのデプロイ
 
-1. GitHubリポジトリを作成
+1. GitHubリポジトリにコードをプッシュ
 2. Vercelアカウントでリポジトリを連携
-3. 自動的にデプロイが開始されます
+3. `vercel.json`設定により自動的にデプロイが開始されます
 
 ## 📁 プロジェクト構造
 
 ```
-src/
-├── components/         # 再利用可能なコンポーネント
-│   ├── Header.astro   # ナビゲーションヘッダー
-│   ├── Hero.astro     # ヒーローセクション
-│   ├── Skills.astro   # スキル表示
-│   ├── Projects.astro # プロジェクト紹介
-│   └── Footer.astro   # フッター
-├── layouts/           # ページレイアウト
-│   └── Layout.astro   # 基本レイアウト
-├── pages/             # ページファイル
-│   ├── index.astro    # トップページ
-│   ├── about.astro    # プロフィールページ
-│   ├── projects.astro # プロジェクト一覧
-│   └── contact.astro  # お問い合わせページ
-└── styles/            # スタイルファイル
-    └── global.css     # Tailwind CSS
+tasty-telescope/
+├── public/                 # 静的ファイル（画像など）
+├── src/
+│   ├── components/         # 再利用可能なコンポーネント
+│   │   ├── Header.astro   # ナビゲーションヘッダー
+│   │   ├── Hero.astro     # ヒーローセクション
+│   │   ├── Skills.astro   # スキル表示
+│   │   ├── Works.astro    # 開発実績紹介
+│   │   └── Footer.astro   # フッター
+│   ├── layouts/           # ページレイアウト
+│   │   └── Layout.astro   # 基本レイアウト
+│   ├── pages/             # ページファイル
+│   │   ├── index.astro    # トップページ
+│   │   ├── works.astro    # 開発実績一覧
+│   │   ├── about.astro    # プロフィールページ（非表示）
+│   │   └── contact.astro  # お問い合わせページ
+│   └── styles/            # スタイルファイル
+│       └── global.css     # グローバルスタイル
+├── astro.config.mjs       # Astro設定
+├── vercel.json           # Vercel設定
+└── package.json          # 依存関係とスクリプト
 ```
 
-## ⚡ パフォーマンス
+## 🎨 デザイン特徴
 
-- Lighthouse スコア: 90点以上（全項目）
-- Core Web Vitals: すべて緑色
-- ページ読み込み時間: 2秒以内
+- **条件付きボタン表示**: GitHubリンクやデモサイトのURLが設定されている場合のみボタンを表示
+- **レスポンシブレイアウト**: モバイルファーストでデザインされたUI
+- **統一されたスタイル**: 主要実績とその他実績で一貫性のあるデザイン
+- **アクセシブル**: 適切なaria-labelとキーボードナビゲーション
 
 ## 📝 カスタマイズ
 
@@ -95,25 +100,61 @@ src/
 
 - `src/components/Hero.astro` - 名前、自己紹介
 - `src/components/Skills.astro` - スキル情報
-- `src/components/Projects.astro` - プロジェクト情報
-- `src/pages/about.astro` - 詳細プロフィール
+- `src/components/Works.astro` - 開発実績情報
+- `src/pages/works.astro` - 詳細な開発実績一覧
 - `src/pages/contact.astro` - 連絡先情報
 
-### プロジェクト画像
+### 開発実績の追加
 
-`public/` ディレクトリにプロジェクト画像を配置し、各コンポーネントでパスを更新してください。
+`src/components/Works.astro`と`src/pages/works.astro`のworksデータ配列に新しい項目を追加：
+
+```javascript
+{
+  id: 5,
+  title: "新しいプロジェクト",
+  description: "簡単な説明",
+  longDescription: "詳細な説明", // works.astroのみ
+  technologies: ["React", "TypeScript"],
+  github: "https://github.com/username/repo", // 空文字列の場合はボタン非表示
+  url: "https://demo-site.com", // 空文字列の場合はボタン非表示
+  featured: true // Works.astroで主要実績として表示するか
+}
+```
+
+### 画像の追加
+
+`public/`ディレクトリに画像を配置し、コンポーネントでパスを指定：
+
+```astro
+<img src="/your-image.jpg" alt="説明" />
+```
+
+## 🔧 主な機能
+
+- **動的ボタン表示**: githubやurl属性が空でない場合のみボタンを表示
+- **レスポンシブグリッド**: デバイスサイズに応じて最適なレイアウト
+- **SEO対応**: 適切なメタタグとタイトル設定
+- **フォーム処理**: お問い合わせフォームの実装
 
 ## 📄 ライセンス
 
 このプロジェクトはMITライセンスの下で公開されています。
 
-## 📞 お問い合わせ
+## 🚀 Astro コマンド
 
-ご質問やご相談がございましたら、お気軽にお問い合わせください。
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | 依存関係をインストール                            |
+| `npm run dev`             | ローカル開発サーバーを localhost:4321 で起動      |
+| `npm run build`           | 本番用サイトを ./dist/ にビルド                   |
+| `npm run preview`         | ビルド結果をローカルでプレビュー                  |
+| `npm run astro ...`       | `astro add`, `astro check` などのCLIコマンドを実行 |
 
-- Email: contact@example.com
-- GitHub: [@yamada-taro](https://github.com/yamada-taro)
-- LinkedIn: [yamada-taro](https://linkedin.com/in/yamada-taro)
+## 📚 参考リンク
+
+- [Astro公式ドキュメント](https://docs.astro.build)
+- [Tailwind CSS公式サイト](https://tailwindcss.com/)
+- [Vercelデプロイガイド](https://vercel.com/docs)
 
 ```sh
 npm create astro@latest -- --template minimal
